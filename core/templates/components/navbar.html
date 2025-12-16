@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Right Navbar</title>
+
+<style>
+/* ========== BASE ========== */
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background:#0a001a;
+  color:#fff;
+  font-family:"Poppins", sans-serif;
+}
+
+/* ========== NAVBAR ========== */
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  height:70px;
+  background:rgba(255,255,255,0.04);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  z-index:1000;
+  margin:0;
+}
+
+/* container full width */
+.nav-container{
+  width:100%;
+  height:70px;
+  padding:0 32px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end; /* 🔥 RIGHT CORNER */
+}
+
+/* menu */
+.nav-menu{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+
+/* links */
+.nav-link{
+  color:#e8f0f7;
+  text-decoration:none;
+  font-size:0.95rem;
+  font-weight:500;
+  position:relative;
+  padding:6px 0;
+  transition:0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active{
+  color:#00eaff;
+}
+
+/* underline animation */
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg,#00eaff,#4befff);
+  transition:0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after{
+  width:100%;
+}
+
+/* ========== HAMBURGER ========== */
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:1100;
+}
+
+.nav-toggle span{
+  width:28px;
+  height:3px;
+  background:#00eaff;
+  border-radius:2px;
+  transition:0.3s;
+}
+
+.nav-toggle.active span:nth-child(1){
+  transform:rotate(45deg) translate(6px,6px);
+}
+.nav-toggle.active span:nth-child(2){
+  opacity:0;
+}
+.nav-toggle.active span:nth-child(3){
+  transform:rotate(-45deg) translate(6px,-6px);
+}
+
+/* ========== MOBILE ========== */
+@media(max-width:768px){
+
+  .nav-toggle{
+    display:flex;
+  }
+
+  .nav-menu{
+    position:fixed;
+    top:70px;
+    right:-100%;
+    width:100%;
+    height:calc(100vh - 70px);
+    background:rgba(10,0,26,0.98);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    align-items:center;
+    padding-top:0;
+    transition:0.4s ease;
+  }
+
+  .nav-menu.active{
+    right:0;
+  }
+
+  .nav-link{
+    font-size:1.2rem;
+    padding:20px 0;
+    width:90%;
+    text-align:center;
+    border-bottom:1px solid rgba(0,234,255,0.25);
+    margin:0;
+  }
+
+  .nav-link:last-child{
+    border-bottom:none;
+  }
+}
+
+/* demo spacing */
+main{
+  margin-top:70px;
+  padding:0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========== NAVBAR ========== -->
+<nav class="navbar">
+  <div class="nav-container">
+
+    <button class="nav-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-menu" id="navMenu">
+      <a class="nav-link active" href="#home" onclick="closeMenu()">Home</a>
+      <a class="nav-link" href="#about" onclick="closeMenu()">About</a>
+      <a class="nav-link" href="#skills" onclick="closeMenu()">Skills</a>
+      <a class="nav-link" href="#projects" onclick="closeMenu()">Projects</a>
+      <a class="nav-link" href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+
+  </div>
+</nav>
+
+<main>
+  <!-- content here -->
+</main>
+
+<!-- ========== JS ========== -->
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("navMenu");
+  const toggle = document.querySelector(".nav-toggle");
+
+  menu.classList.toggle("active");
+  toggle.classList.toggle("active");
+}
+
+function closeMenu(){
+  document.getElementById("navMenu").classList.remove("active");
+  document.querySelector(".nav-toggle").classList.remove("active");
+}
+</script>
+
+</body>
+</html>

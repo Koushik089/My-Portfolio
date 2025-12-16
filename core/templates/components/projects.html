@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<section id="projects">
+<style>
+  body {
+    background: #0a001a !important; /* 🔴 Updated background color (Home/Certificate Theme) */
+    color: #c8f7ff !important;
+  }
+
+  .project-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(0, 198, 255, 0.3) !important;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.15);
+    transition: 0.3s ease;
+    backdrop-filter: blur(4px);
+  }
+
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #00eaff;
+  }
+
+  .card-title {
+    color: #4befff !important;
+    font-weight: 600;
+  }
+
+  .btn-outline-info {
+    border-color: #00eaff !important;
+    color: #00eaff !important;
+  }
+
+  .btn-outline-info:hover {
+    background: #00eaff !important;
+    color: #0a001a !important;
+    box-shadow: 0 0 15px #00eaff;
+  }
+
+  h2.page-heading {
+    background: linear-gradient(135deg, #00eaff 0%, #4befff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0,234,255,0.6), 0 0 60px rgba(75,239,255,0.4);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+  }
+</style>
+
+
+<!-- Projects Section -->
+<div class="container py-3 text-white">
+  <h2 class="text-center mb-3 display-5 fw-bold page-heading">🚀 My Projects</h2>
+
+  <div class="row g-4 justify-content-center">
+
+   
+
+    <!-- Project 2 -->
+    <div class="col-md-4">
+      <div class="card text-white shadow project-card">
+        <img src="{% static 'images/Portfolio.png' %}" class="card-img-top" alt="Project Image">
+        <div class="card-body">
+          <h5 class="card-title">Portfolio Website</h5>
+          <p class="card-text">A stylish and modern portfolio to showcase skills & experience.</p>
+          <a href="#" class="btn btn-outline-info">View Project</a>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+
+{% endblock content %}

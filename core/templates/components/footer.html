@@ -1,0 +1,217 @@
+{%load static %}
+<style>
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+  
+  footer {
+    background: #0a001a !important;
+    border-top: 1px solid rgba(0,234,255,0.2);
+    padding: 60px 0 20px;
+    margin-top: 80px;
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+  }
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #00eaff 0%, #4befff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0,234,255,0.6), 0 0 60px rgba(75,239,255,0.4);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-section p {
+    color: #e8f0f7;
+    line-height: 1.9;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    color: #e8f0f7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    padding-left: 15px;
+  }
+
+  .footer-links a::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #00eaff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #00eaff;
+    padding-left: 20px;
+  }
+
+  .footer-links a:hover::before {
+    opacity: 1;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .social-links a {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .social-links a img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    background: #00eaff;
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,234,255,0.3);
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #e8f0f7;
+  }
+
+  .footer-bottom p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .footer-bottom a {
+    color: #00eaff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .footer-bottom a:hover {
+    color: #843bff;
+  }
+
+  .footer-brand {
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #00eaff 0%, #4befff 50%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 40px rgba(0,234,255,0.6), 0 0 80px rgba(75,239,255,0.3);
+    margin-bottom: 15px;
+    display: inline-block;
+    letter-spacing: 3px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .footer-brand {
+    background-size: 200% auto;
+    transition: background-position 0.5s ease;
+  }
+
+  .footer-brand:hover {
+    background-position: right center;
+  }
+
+
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+</style>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">KOUSHIK GHOSH</div>
+        <p>Frontend Developer passionate about creating beautiful web experiences with Python, Django, and modern technologies.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/koushik-ghosh-3727b7364" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <img src="{% static 'images/linkedin.jpg' %}" alt="LinkedIn" />
+          </a>
+
+          <a href="https://github.com/Koushik089" target="_blank" rel="noopener noreferrer" title="GitHub">
+            <img src="{% static 'images/github.jpg' %}" alt="GitHub" />
+          </a>
+
+          <a href="https://www.facebook.com/share/1HL2r7cVDP" target="_blank" rel="noopener noreferrer" title="Facebook">
+            <img src="{% static 'images/facebook.png' %}" alt="Facebook" />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul class="footer-links" style="color: #e8f0f7;">
+          <li style="color: #e8f0f7;">Email:ghoshkoushik135@gmail.com</li>
+          <li style="color: #e8f0f7;">Phone: +91 9635331454</li>
+          <li style="color: #e8f0f7;">Location: Khargapur,West Bengal,pin:721301 </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025  Koushik Ghosh. All rights reserved.</p>
+      <p>Built with Django & ❤</p>
+    </div>
+  </div>
+</footer>
