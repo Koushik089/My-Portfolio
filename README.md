@@ -1,2 +1,2 @@
 ﻿# My-Portfolio
-myportfolio-tau-one-91.vercel.app
+https://myportfolio-tau-one-91.vercel.app/
