@@ -1,0 +1,215 @@
+{% load static %}
+
+<section id="certificate">
+    <style>
+        #certificate {
+            background: #0a001a !important;
+            padding: 100px 0 80px 0;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+        }
+
+        .certi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 95%;
+            max-width: 1400px;
+            margin: 40px auto;
+        }
+
+        .certi-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 198, 255, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 198, 255, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .certi-card:hover::before {
+            left: 100%;
+        }
+
+        .certi-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 234, 255, 0.3);
+            border-color: rgba(0, 234, 255, 0.6);
+        }
+
+        .certi-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid rgba(0, 234, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .certi-card:hover img {
+            border-color: rgba(0, 234, 255, 0.8);
+            box-shadow: 0 5px 20px rgba(0, 234, 255, 0.2);
+        }
+
+        .certi-card h3 {
+            font-size: 1.2rem;
+            margin-top: 15px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #00eaff, #4befff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        .certi-card .cert-date {
+            font-size: 0.9rem;
+            color: #9aa9b8;
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        .certi-card .cert-issuer {
+            font-size: 1rem;
+            color: #c8f7ff;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .cert-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+
+        .cert-btn {
+            padding: 8px 16px;
+            border: 1px solid #00eaff;
+            background: transparent;
+            color: #00eaff;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cert-btn:hover {
+            background: #00eaff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            text-align: center;
+            background: linear-gradient(135deg, #00eaff 0%, #4befff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(0,234,255,0.6), 0 0 60px rgba(75,239,255,0.4);
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <h2 class="section-title">Certificates</h2>
+
+    <div class="certi-container">
+        <div class="certi-card">
+            <img src="{% static 'images/intership.png' %}" alt="Internship Certificate">
+            <h3>Web Development Internship</h3>
+            <p class="cert-issuer">Tech Solutions Ltd.</p>
+            <p class="cert-date">June 2024</p>
+            <div class="cert-buttons">
+                <a href="#" class="cert-btn" onclick="viewCert('internship')">👁️ View</a>
+                <a href="{% static 'files/internship.pdf' %}" class="cert-btn" download>📄 PDF</a>
+            </div>
+        </div>
+
+        <div class="certi-card">
+            <img src="{% static 'images/github.jpg' %}" alt="Python Certificate">
+            <h3>Python Programming</h3>
+            <p class="cert-issuer">Code Academy</p>
+            <p class="cert-date">March 2024</p>
+            <div class="cert-buttons">
+                <a href="#" class="cert-btn" onclick="viewCert('python')">👁️ View</a>
+                <a href="{% static 'files/python.pdf' %}" class="cert-btn" download>📄 PDF</a>
+            </div>
+        </div>
+
+        <div class="certi-card">
+            <img src="{% static 'images/linkedin.jpg' %}" alt="Django Certificate">
+            <h3>Django Framework</h3>
+            <p class="cert-issuer">Web Institute</p>
+            <p class="cert-date">February 2024</p>
+            <div class="cert-buttons">
+                <a href="#" class="cert-btn" onclick="viewCert('django')">👁️ View</a>
+                <a href="{% static 'files/django.pdf' %}" class="cert-btn" download>📄 PDF</a>
+            </div>
+        </div>
+
+        <div class="certi-card">
+            <img src="{% static 'images/facebook.png' %}" alt="JavaScript Certificate">
+            <h3>JavaScript Mastery</h3>
+            <p class="cert-issuer">JS Academy</p>
+            <p class="cert-date">January 2024</p>
+            <div class="cert-buttons">
+                <a href="#" class="cert-btn" onclick="viewCert('js')">👁️ View</a>
+                <a href="{% static 'files/javascript.pdf' %}" class="cert-btn" download>📄 PDF</a>
+            </div>
+        </div>
+
+        <div class="certi-card">
+            <img src="{% static 'images/ig.jpg' %}" alt="HTML CSS Certificate">
+            <h3>HTML & CSS</h3>
+            <p class="cert-issuer">Frontend School</p>
+            <p class="cert-date">December 2023</p>
+            <div class="cert-buttons">
+                <a href="#" class="cert-btn" onclick="viewCert('html')">👁️ View</a>
+                <a href="{% static 'files/html-css.pdf' %}" class="cert-btn" download>📄 PDF</a>
+            </div>
+        </div>
+
+        <div class="certi-card">
+            <img src="{% static 'images/img.jpg' %}" alt="Database Certificate">
+            <h3>Database Design</h3>
+            <p class="cert-issuer">Data Academy</p>
+            <p class="cert-date">November 2023</p>
+            <div class="cert-buttons">
+                <a href="#" class="cert-btn" onclick="viewCert('db')">👁️ View</a>
+                <a href="{% static 'files/database.pdf' %}" class="cert-btn" download>📄 PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function viewCert(certType) {
+        // You can add modal or new window functionality here
+        alert('Certificate viewer will open here. Add your PDF viewer logic.');
+    }
+    </script>
+</section>

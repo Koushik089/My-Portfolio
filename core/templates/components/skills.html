@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section id="skills">
+
+<style>
+#skills {
+    padding-top: 20px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0a001a !important;
+    color: #c8f7ff;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 10px 0;
+    background: linear-gradient(135deg, #00eaff, #4befff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(0,234,255,0.6);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.skills-wrapper {
+    width: 90%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skill-block {
+    background: rgba(255,255,255,0.05);
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 0 25px rgba(0,198,255,0.25);
+    transition: 0.3s ease;
+}
+
+.skill-block:hover {
+    box-shadow: 0 0 40px rgba(0,198,255,0.45);
+}
+
+.category-title {
+    text-align: center;
+    font-size: 18px;
+    color: #4befff;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.skill-grid {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    width: 85px;
+    text-align: center;
+}
+
+.skill-item img {
+    width: 26px;
+    height: 26px;
+    margin-top: 8px;
+    filter: drop-shadow(0 0 6px #00c6ff);
+}
+
+.skill-item p {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #e2fbff;
+}
+
+/* CIRCLE */
+.circle {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(#00c6ff 0deg, rgba(0,198,255,0.15) 0deg);
+    box-shadow: 0 0 16px rgba(0,198,255,0.6);
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #0a001a;
+    border-radius: 50%;
+}
+
+.circle span {
+    position: relative;
+    font-size: 12px;
+    font-weight: 700;
+    color: #00eaff;
+}
+
+.skills-wrapper .skill-block:last-child {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    .skills-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<h2 class="section-title">My Skills</h2>
+
+<div class="skills-wrapper">
+
+<!-- FRONTEND -->
+<div class="skill-block">
+    <h3 class="category-title">Frontend Skills</h3>
+    <div class="skill-grid">
+
+        <div class="skill-item" data-percent="95">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/174/174854.png">
+            <p>HTML</p>
+        </div>
+
+        <div class="skill-item" data-percent="90">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/732/732190.png">
+            <p>CSS</p>
+        </div>
+
+        <div class="skill-item" data-percent="85">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png">
+            <p>JavaScript</p>
+        </div>
+
+        <div class="skill-item" data-percent="80">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968672.png">
+            <p>Bootstrap</p>
+        </div>
+
+        <div class="skill-item" data-percent="75">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968705.png">
+            <p>Tailwind</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- BACKEND -->
+<div class="skill-block">
+    <h3 class="category-title">Backend Skills</h3>
+    <div class="skill-grid">
+
+        <div class="skill-item" data-percent="90">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/3665/3665923.png">
+            <p>C</p>
+        </div>
+
+        <div class="skill-item" data-percent="85">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968350.png">
+            <p>Python</p>
+        </div>
+
+        <div class="skill-item" data-percent="80">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/2721/2721297.png">
+            <p>Django</p>
+        </div>
+
+        <div class="skill-item" data-percent="85">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/4248/4248443.png">
+            <p>MySQL</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- TOOLS -->
+<div class="skill-block">
+    <h3 class="category-title">Other Tools</h3>
+    <div class="skill-grid">
+
+        <div class="skill-item" data-percent="70">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/2111/2111288.png">
+            <p>Git</p>
+        </div>
+
+        <div class="skill-item" data-percent="75">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733553.png">
+            <p>GitHub</p>
+        </div>
+
+        <div class="skill-item" data-percent="90">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/906/906324.png">
+            <p>VS Code</p>
+        </div>
+
+        <div class="skill-item" data-percent="85">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/9428/9428964.png">
+            <p>Postman</p>
+        </div>
+
+        <div class="skill-item" data-percent="80">
+            <div class="circle"><span>0%</span></div>
+            <img src="https://cdn-icons-png.flaticon.com/128/5968/5968520.png">
+            <p>Figma</p>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+<script>
+let skillsAnimated = false;
+
+function animateCircle(circle, target) {
+    let current = 0;
+    const span = circle.querySelector("span");
+
+    const timer = setInterval(() => {
+        if (current >= target) {
+            clearInterval(timer);
+            return;
+        }
+        current++;
+        span.textContent = current + "%";
+        circle.style.background =
+            `conic-gradient(
+                #00c6ff ${current * 3.6}deg,
+                rgba(0,198,255,0.15) ${current * 3.6}deg
+            )`;
+    }, 15);
+}
+
+function startSkillAnimation() {
+    if (skillsAnimated) return;
+    skillsAnimated = true;
+
+    document.querySelectorAll(".skill-item").forEach((item, index) => {
+        const percent = item.dataset.percent;
+        const circle = item.querySelector(".circle");
+
+        setTimeout(() => {
+            animateCircle(circle, percent);
+        }, index * 120);
+    });
+}
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            startSkillAnimation();
+        }
+    });
+}, { threshold: 0.3 });
+
+observer.observe(document.querySelector("#skills"));
+</script>
+
+</section>
+{% endblock content %}

@@ -1,0 +1,28 @@
+:root {
+  --neon: #00eaff;
+  --vio: #843bff;
+  --card: rgba(255,255,255,0.03);
+  --glass-border: rgba(255,255,255,0.08);
+  --muted: #a0a9b8;
+  --ff-head: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #09111f, #0e1323);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px;
+}
+
+.nav-link:hover {
+  color: #00eaff !important;
+  transition: color 0.3s ease;
+}
+
+section {
+  padding: 60px 0;
+}
+
+.glow-effect {
+  box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+}
